@@ -18,9 +18,9 @@
 			<h:inputText id="nome" label="Nome" value="#{editAluno.nome}"
 				required="true" />
 			<br />
-			<h:outputLabel value="Curso:" for="curso" />
+			<h:outputLabel value="Curso:" for="alunoBean.curso" />
 			<br />
-			<h:selectOneMenu value="#{alunoBean.curso}"
+			<h:selectOneMenu value="#{editAluno.curso}"
 				converter="cursoConverter">
 				<f:selectItems value="#{cursoBean.listar()}" var="c"
 					noSelectionValue="---" itemValue="#{c}" itemLabel="#{c.nome}" />

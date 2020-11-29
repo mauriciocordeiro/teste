@@ -66,7 +66,7 @@ public class AlunoBean {
 
 	@Override
 	public String toString() {
-		return "Aluno [id=" + id + ", nome=" + nome + "]";
+		return "Aluno [id=" + id + ", nome=" + nome + ", curso=" + (curso==null ? "null" : curso.toString()) + "]";
 	}
 	
 	public String novo() {
@@ -85,8 +85,7 @@ public class AlunoBean {
 	public String salvar() {
 		AlunoDAO dao = new AlunoDAO();
 		dao.create(this);
-		
-		
+				
 		return "mostraraluno";
 	}
 	
@@ -102,6 +101,8 @@ public class AlunoBean {
 	}
 	
 	public String editar(AlunoBean aluno) {
+		System.out.println("editar(): "+aluno);
+		
 		AlunoDAO dao = new AlunoDAO();
 		dao.update(aluno);
 		
