@@ -8,24 +8,26 @@
 </h:head>
 
 <h:body>
-	<h1>Cadastro de Alunos</h1>
+	<h1>Edição de Alunos</h1>
 	<hr />
 	<h:form acceptcharset="UTF-8">
 		<h:messages />
 		<h:panelGrid columns="2">
 			<h:outputLabel value="Nome:" for="nome" />
 			<br />
-			<h:inputText id="nome" label="Nome" value="#{alunoBean.nome}"
+			<h:inputText id="nome" label="Nome" value="#{editAluno.nome}"
 				required="true" />
 			<br />
 			<h:outputLabel value="Curso:" for="curso" />
 			<br />
-			<h:selectOneMenu value="#{alunoBean.curso}" converter="cursoConverter">
-				<f:selectItems value="#{cursoBean.listar()}" var="c" noSelectionValue="---"
-					itemValue="#{c}" itemLabel="#{c.nome}" />
+			<h:selectOneMenu value="#{alunoBean.curso}"
+				converter="cursoConverter">
+				<f:selectItems value="#{cursoBean.listar()}" var="c"
+					noSelectionValue="---" itemValue="#{c}" itemLabel="#{c.nome}" />
 			</h:selectOneMenu>
 			<br />
-			<h:commandButton action="#{alunoBean.salvar}" value="Salvar" />
+			<h:commandButton action="#{alunoBean.editar(editAluno)}"
+				value="Confirmar" />
 		</h:panelGrid>
 	</h:form>
 	<hr />

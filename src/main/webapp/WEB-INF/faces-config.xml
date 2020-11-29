@@ -4,6 +4,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
     version="2.3">
+	<converter>
+		<converter-for-class>teste.model.CursoBean</converter-for-class>
+		<converter-class id="cursoConverter">teste.model.CursoConverter</converter-class>
+	</converter>
 	<managed-bean>
 		<managed-bean-name>usuarioBean</managed-bean-name>
 		<managed-bean-class>teste.UsuarioBean</managed-bean-class>
